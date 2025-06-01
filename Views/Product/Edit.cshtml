@@ -1,0 +1,31 @@
+﻿@model Inventory_System.Models.Product;
+@{
+    ViewData["Title"] = $"Edit Product - {Model.Name}";
+   
+}
+<h2>Edit</h2>
+<div>
+    <form asp-action="Edit" method="post" class="mx-auto form-control w-50">
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            <label for="Name">Name</label>
+            <input type="text" class="form-control" asp-for="Name" id="txtName"  />
+            <span id=""></span>
+        </div>
+        <div class="form-group">
+            <label for="Price">Price</label>
+            <input type="number" class="form-control" asp-for="Price" />
+        </div>
+        <div class="form-group">
+            <label for="Descripton">Descripton</label>
+            <input type="text" class="form-control" asp-for="Description" />
+        </div>
+        <div class="form-group">
+            <label for="Category">Category</label>
+            <input type="text" class="form-control" asp-for="Category" />
+        </div>
+
+        <button type="submit" class="btn btn-success mt-4" value="Save">Submit</button>
+    </form>
+
+</div>
