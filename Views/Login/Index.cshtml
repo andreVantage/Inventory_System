@@ -1,0 +1,52 @@
+﻿@model Inventory_System.Models.User;
+@{
+    ViewData["Title"] = "Login";
+    Layout = null;
+}
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title></title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Sidebar.css" asp-append-version="true" />
+    </head>
+    <body>
+        
+    <div class="text-center mt-5">
+        <h1>Login</h1>
+    </div>
+
+    <div class="container mt-5 min-vh-75 f ">
+        <form>
+            <div class="row justify-content-center">
+                <div class="col-sm-7 col-md-5 col-lg-3 col-7">
+                    <div class="form-group mb-3">
+                        <label for="UserName">Username</label>
+                        <input type="text" class="form-control" name="Username" asp-for="UserName" />
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="Password">Password</label>
+                        <input type="password" class="form-control" name="Password" asp-for="Password" />
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="Email">Email</label>
+                        <input type="email" class="form-control" name="Email" asp-for="Email" />
+                    </div>
+                    <div class="form-check mb-3">
+                        <input type="checkbox" class="form-check-input" name="IsAdmin" asp-for="IsAdmin" />
+                        <label class="form-check-label" for="IsAdmin">IsAdmin</label>
+                    </div>
+                    <div class="text-center ">
+                        <button class="btn btn-success  col-md-12 col-10 " type="submit" id="btnSubmit">Login</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/_framework/aspnetcore-browser-refresh.js"></script>
+    </body>
+    </html>
