@@ -17,7 +17,7 @@
     </div>
 
     <div class="container mt-5 min-vh-75 f ">
-        <form>
+        <form asp-action="ValidateUser" method="post">
             <div class="row justify-content-center">
                 <div class="col-sm-7 col-md-5 col-lg-3 col-7">
                     <div class="form-group mb-3">
@@ -28,17 +28,19 @@
                         <label for="Password">Password</label>
                         <input type="password" class="form-control" name="Password" asp-for="Password" />
                     </div>
-                    <div class="form-group mb-3">
-                        <label for="Email">Email</label>
-                        <input type="email" class="form-control" name="Email" asp-for="Email" />
-                    </div>
-                    <div class="form-check mb-3">
-                        <input type="checkbox" class="form-check-input" name="IsAdmin" asp-for="IsAdmin" />
-                        <label class="form-check-label" for="IsAdmin">IsAdmin</label>
+                    <div class="form-group mb-3 row flex-md-wrap">
+                       <div class="col">
+                            <input type="checkbox" class="form-check-input" />
+                            <label for="Remember">Remember</label>
+                       </div>
+                        <div class="col text-nowrap">
+                            <a class="fs-6" asp-area="" asp-controller="Account" asp-action="ForgotPassword">Forgot Password</a>
+                        </div>
                     </div>
                     <div class="text-center ">
-                        <button class="btn btn-success  col-md-12 col-10 " type="submit" id="btnSubmit">Login</button>
+                        <button class="btn btn-success  col-md-12 col-10 " type="submit" id="btnSubmit ">Login</button>
                     </div>
+
                 </div>
             </div>
         </form>

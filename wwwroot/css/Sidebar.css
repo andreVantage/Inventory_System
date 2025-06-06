@@ -28,12 +28,13 @@ body {
 
         .sidebar a:hover {
             background-color: #FFF;
-            color: black
+            color: black !important;
+            
         }
 
         .sidebar a:focus {
             background-color: #FFF;
-            color: black
+            color: black!important;
         }
 
 .content {

@@ -13,21 +13,31 @@
     </style>
 </head>
 <body>
-    <div class="sidebar">
+    <div class="sidebar d-flex flex-column vh-100 bg-dark ">
         <div class="fs-4 fw-bold px-3 mb-4">Inventory</div>
-        <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+
+        <a asp-area="" asp-controller="Home" asp-action="Index" class="px-3 text-white text-decoration-none">Home</a>
 
         <!-- Toggle Header -->
-        <div class="px-3 fw-semibold mt-3 nav-toggle" data-bs-toggle="collapse" data-bs-target="#productSubmenu" aria-expanded="false" aria-controls="productSubmenu">
-            Product Management 
+        <div class="px-3  fw-semibold mt-3 nav-toggle" data-bs-toggle="collapse" data-bs-target="#productSubmenu" aria-expanded="false" aria-controls="productSubmenu">
+            Product Management
         </div>
 
         <!-- Collapsible Submenu -->
-        <div class="collapse ps-3" id="productSubmenu">
-            <a asp-area="" asp-controller="Product" asp-action="Index" class="ps-3">Product List</a>
-            <a asp-area="" asp-controller="Product" asp-action="Create" class="ps-3">Create</a>
+        <div class="collapse ps-2"  id="productSubmenu">
+            <a asp-area="" asp-controller="Product" asp-action="Index" class="ps-4 text-white text-decoration-none">Product List</a>
+            <a asp-area="" asp-controller="Product" asp-action="Create" class="ps-4 text-white text-decoration-none">Create</a>
+        </div>
+
+        <!-- Spacer to push logout down -->
+        <div class="flex-grow-1"></div>
+
+        <!-- Logout at the bottom -->
+        <div class="px-3 pb-3">
+            <a asp-action="Logout" asp-controller="Account" class="btn btn-danger w-100">Logout</a>
         </div>
     </div>
+
 
     <div class="content">
         <main role="main" class="pb-3">

@@ -4,49 +4,50 @@
 }
 <h2 class="mb-3 text-center fs-1 mt-3">Product List</h2>
 
-<div class="  border border-2 border-dark ">
-    <div class=" ">
-        <table class="table table-bordered border-dark m-0">
-            <thead class="bg-black text-white" style="position: sticky; top: 0; z-index: 1;">
+<div class="table-responsive border border-2 border-dark rounded-3 shadow-sm">
+    <table class="table table-bordered table-hover  align-middle m-0">
+        <thead class="bg-dark text-white sticky-top">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Description</th>
+                <th scope="col">Category</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            @foreach (var item in Model)
+            {
                 <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Description</th>
-                    <th>Category</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Price</td>
+                    <td>@item.Description</td>
+                    <td>@item.Category</td>
+                    <td>
+                        <a class="btn btn-sm btn-warning text-dark fw-semibold" asp-controller="Product" asp-action="Edit" asp-route-id="@item.Id">
+                            Edit
+                        </a>
+                    </td>
+                    <td>
+                        <button class="btn btn-sm btn-danger fw-semibold"
+                                data-bs-toggle="modal"
+                                data-bs-target="#deleteModal"
+                                data-id="@item.Id"
+                                data-name="@item.Name"
+                                data-price="@item.Price"
+                                data-category="@item.Category">
+                            Delete
+                        </button>
+                    </td>
                 </tr>
-            </thead>
-            <tbody class="text-center">
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>@item.Id</td>
-                        <td>@item.Name</td>
-                        <td>@item.Price</td>
-                        <td>@item.Description</td>
-                        <td>@item.Category</td>
-                        <td>
-                            <a class="btn btn-warning text-black" asp-controller="Product" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                        </td>
-                        <td>
-                            <button class="btn btn-danger"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#deleteModal"
-                                    data-id="@item.Id"
-                                    data-name="@item.Name"
-                                    data-price="@item.Price"
-                                    data-category="@item.Category">
-                                Delete
-                            </button>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
+            }
+        </tbody>
+    </table>
 </div>
+
 <!-- Delete Confirmation Modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog">
